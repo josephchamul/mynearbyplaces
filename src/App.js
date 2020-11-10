@@ -3,6 +3,7 @@ import { BrowserRouter, Switch, Route } from "react-router-dom";
 import Home from './components/Home';
 import Login from "./components/Login";
 import Review from "./components/Review";
+import Search from "./components/Search";
 import './App.css';
 
 function App() {
@@ -15,6 +16,8 @@ function App() {
         </Route>
         <Route path="/review">
           <Review />
+        </Route>
+        <Route path="/search" render={(props) => <Search {...props} isAuthed={true} />}>
         </Route>
       </Switch>
     </BrowserRouter>

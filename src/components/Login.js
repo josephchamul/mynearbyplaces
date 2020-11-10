@@ -1,5 +1,5 @@
 import React from "react";
-import { Redirect } from "react-router-dom";
+import { Link, Redirect } from "react-router-dom";
 import "./style.css";
 import header from './images/title_pic.jpg'
 
@@ -28,7 +28,7 @@ class Login extends React.Component {
     }
     return (
       <div className="log-content">
-        <div className="login_title">ReViewer</div>
+        <div className="login_title"><Link to="/" className="title-link">ReViewer</Link></div>
         <img src={header} alt="header_img" />
         <div className="signin">
           <form onSubmit={this.onSubmit}>

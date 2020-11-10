@@ -1,16 +1,22 @@
 import React from 'react';
-import { Link } from "react-router-dom";
+import { Link, Redirect } from "react-router-dom";
 import server from "../ServerInterface/server";
-import Entry from "./Entry";
 import './style.css';
 import header from './images/title_pic.jpg'
 
 class Home extends React.Component {
     constructor(props) {
         super(props);
-        this.state = { username: "", entries: [], cursor: 0, searching: "Restaurant", location: "Tucson, AZ" };
+        this.state = { username: "", entries: [], submit: false, place: "", location: ""};
       }
 
+      onSubmit = (event) => {
+        if (this.state.place.trim().length > 0 && this.state.location.trim().length > 0) {
+          this.setState({ submit: true });
+        }
+        event.preventDefault();
+      };
+    
       onChange = (event) => {
         const value = event.target.value;
         const name = event.target.name;
@@ -18,18 +24,24 @@ class Home extends React.Component {
       };
 
       search = () => {
+        let from = { pathname: "/search", state: { place: this.state.place, location: this.state.location } };
+        if (this.state.submit) {
+          return <Redirect to={from} />;
+        }
         return (
           <div className='search'>
             <form onSubmit={this.onSubmit}>
             <input
               type="text"
-              name="searching"
-              value={this.state.searching}
+              name="place"
+              placeholder="Restaurants"
+              value={this.state.place}
               onChange={this.onChange}
             ></input>
             <input
               type="text"
               name="location"
+              placeholder="Tucson, AZ"
               value={this.state.location}
               onChange={this.onChange}
             ></input>
@@ -39,21 +51,12 @@ class Home extends React.Component {
         );
       }
 
-      popular = () => {
+      places = () => {
         return (
-          <div className="popular">
+          <div className="places">
           </div>
         );
       }
-    
-      body = () => {
-        const { entries, cursor } = this.state;
-        return (
-          <div className="server-places">
-            {entries.length > 0 ? <Entry entry={entries[cursor]} /> : ""}
-          </div>
-        );
-      };
     
       componentDidMount() {
         const entries = server.fetchEntries()[0];
@@ -86,8 +89,9 @@ class Home extends React.Component {
                 {this.search()}
                 <div className="body">
                 <div className="subtitle">Find The Popular Places in Tucson</div>
+                {this.places()}
                 </div>
-                {this.popular()}
+
             </div>
         );
     }

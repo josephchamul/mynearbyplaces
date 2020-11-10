@@ -1,15 +1,15 @@
 let entries = [
-    {
-      name: "develop",
-      origin: "dis + envelop",
-      meanings: [{ type: "verb", meaning: "more advance" }]
-    },
-    {
-      name: "sacerotal",
-      origin: "priest",
-      examples: [],
-      meanings: [{ type: "noun", meaning: "" }]
-    },
-  ];
-  
-  export default entries;
+  {
+    type: "restaurants",
+    places: [
+      { name: "McDonald", rate: 3 },
+      { name: "Taco Bell", rate: 3 },
+    ],
+  },
+  {
+    type: "shops",
+    places: [{ name: "Walmart", rate: 2 }],
+  },
+];
+
+export default entries;

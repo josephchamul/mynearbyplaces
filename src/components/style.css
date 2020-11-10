@@ -155,3 +155,28 @@
   color: white;
   font-family: Arial, Helvetica, sans-serif;
 }
+
+.search_title {
+  background-color: #ffa73b;
+  text-align: center;
+  color: white;
+  font-size: 50px;
+  padding-top: 15px;
+  padding-bottom: 10px;
+  width: 100%;
+  height: 80px;
+}
+
+.search-body {
+  background-color: #ededed;
+  margin: auto;
+  width: 60%;
+  height: 600px;
+  display: flex;
+  justify-content: center;
+}
+
+.title-link {
+  color: white;
+  text-decoration: none;
+}
