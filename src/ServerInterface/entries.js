@@ -2,8 +2,20 @@ let entries = [
   {
     type: "restaurants",
     places: [
-      { name: "McDonald", rate: 3 },
-      { name: "Taco Bell", rate: 3 },
+      {
+        name: "McDonald's",
+        rate: 3,
+        location: "Tucson, AZ",
+        description: "Burger Fast Food Restaurant",
+        review: [],
+      },
+      {
+        name: "Taco Bell",
+        rate: 3,
+        location: "Tucson, AZ",
+        description: "Taco Fast Food Restaurant",
+        review: [],
+      },
     ],
   },
   {

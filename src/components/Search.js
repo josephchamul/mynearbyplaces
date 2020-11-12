@@ -10,12 +10,12 @@ class Search extends React.Component {
     this.state = { entries: [] };
   }
 
-  body = (place) => {
+  body = (place, location) => {
     const { entries } = this.state;
     return (
       <div className="content">
         {entries.length > 0 ? (
-          <Entry entry={entries[0]} business={place} />
+          <Entry entry={entries} business={place} location={location} />
         ) : (
           ""
         )}
@@ -54,7 +54,7 @@ class Search extends React.Component {
             Write Review
           </Link>
         </div>
-        <div className="search-body">{this.body(place)}</div>
+        <div className="search-body">{this.body(place, locate)}</div>
       </div>
     );
   }
