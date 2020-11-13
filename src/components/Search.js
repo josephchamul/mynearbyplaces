@@ -15,7 +15,7 @@ class Search extends React.Component {
     return (
       <div className="content">
         {entries.length > 0 ? (
-          <Entry entry={entries} business={place} location={location} />
+          <Entry entry={entries} business={place} location={location} name="" />
         ) : (
           ""
         )}

@@ -1,25 +1,13 @@
 import React from "react";
-import { Redirect } from "react-router-dom";
+import { Link, Redirect } from "react-router-dom";
 import "./style.css";
-import header from './images/title_pic.jpg'
+import header from "./images/title_pic.jpg";
 
 class Review extends React.Component {
   constructor(props) {
     super(props);
     this.state = { username: "", authenticated: false };
   }
-  onSubmit = (event) => {
-    if (this.state.username.trim().length > 0) {
-      this.setState({ authenticated: true });
-    }
-    event.preventDefault();
-  };
-
-  onChange = (event) => {
-    const value = event.target.value;
-    const name = event.target.name;
-    this.setState({ [name]: value });
-  };
 
   render() {
     let from = { pathname: "/", state: { user: this.state.username } };
@@ -28,19 +16,28 @@ class Review extends React.Component {
     }
     return (
       <div className="log-content">
-        <div className="login_title">ReViewer</div>
+        <div className="login_title">
+          <Link to="/" className="title-link">
+            ReViewer
+          </Link>
+        </div>
         <img src={header} alt="header_img" />
-        <div className="signin">
+        <div className="review-input">
           <form onSubmit={this.onSubmit}>
-            <h3>Log in to ReViewer </h3>
-            <label>Username</label>
-            <input
-              type="text"
-              name="username"
-              value={this.state.username}
-              onChange={this.onChange}
-            ></input>
-            <button type="submit">Login</button>
+            <h3>Write a ReView </h3>
+            <label>Business Type</label>
+            <input type="text" name="username"></input>
+            <label>Business Name</label>
+            <input type="text" name="username"></input>
+            <label>Rating</label>
+            <input type="text" name="username"></input>
+            <label>Location</label>
+            <input type="text" name="username"></input>
+            <label>Description</label>
+            <input type="text" name="username"></input>
+            <label>Comment</label>
+            <input type="text" name="username"></input>
+            <button type="submit">Post</button>
           </form>
         </div>
         <div className="log-qoute"> ReView Your Favorite Places Around You</div>
