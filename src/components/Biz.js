@@ -23,6 +23,11 @@ class Biz extends React.Component {
     );
   };
 
+  delEntry = () => {
+    alert("hello");
+    return;
+  };
+
   render() {
     let name = "";
     let locate = "";
@@ -61,12 +66,13 @@ class Biz extends React.Component {
             Write Review
           </Link>
         </div>
-        <div className="search-body">
+        <div className="biz-body">
           <div className="title-biz">{name}</div>
           <div className="desc-biz">{desc}</div>
           <div className="locat-biz">{locate}</div>
-          <div className="rate-biz">{rate}</div>
-          <div className="rev-biz">{rev}</div>
+          <div className="rate-biz">Rating: {rate} out of 5</div>
+          <div className="rev-biz">"{rev}"</div>
+          <button onClick={this.delEntry}>Delete</button>
         </div>
       </div>
     );

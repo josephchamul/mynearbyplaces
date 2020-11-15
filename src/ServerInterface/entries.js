@@ -7,7 +7,7 @@ let entries = [
         rate: 3,
         location: "Tucson, AZ",
         description: "Burger Fast Food Restaurant",
-        review: ["the give you your food very fast"],
+        review: ["they give you your food very fast"],
       },
       {
         name: "Taco Bell",

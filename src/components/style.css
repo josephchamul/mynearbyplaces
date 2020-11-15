@@ -176,7 +176,7 @@
 .search-body {
   background-color: #ededed;
   margin: auto;
-  width: 60%;
+  width: 80%;
   height: 600px;
   display: flex;
   justify-content: center;
@@ -198,31 +198,48 @@
 
 .review-title {
   float: left;
-
-  padding-top: 20px;
-  padding-left: 20px;
-  padding-bottom: 10px;
   font-size: 30px;
   color: black;
+  background-color: #ffa73b;
+  width: 100%;
+  height: 50px;
+  text-align: center;
 }
 
 .review-des {
   float: left;
-
-  margin-left: 10px;
-  margin-top: 10px;
+  width: 100%;
+  height: 18px;
+  text-align: center;
+  color: black;
+  padding: 5px;
 }
 
 .review-loc {
   float: left;
-  margin-left: -193px;
-  margin-top: 30px;
+  width: 100%;
+  height: 18px;
+  text-align: center;
+  color: black;
+  padding: 5px;
 }
 
 .review-rate {
   float: left;
-  margin-left: -193px;
-  margin-top: 50px;
+  width: 100%;
+  height: 18px;
+  text-align: center;
+  color: black;
+  padding: 5px;
+}
+
+.review-comment {
+  float: left;
+  width: 100%;
+  height: 18px;
+  text-align: center;
+  color: black;
+  padding: 5px;
 }
 
 .places {
@@ -291,4 +308,51 @@
   position: absolute;
   font-family: Arial, Helvetica, sans-serif;
   border: none;
+}
+
+.biz-body {
+  background-color: #ededed;
+  margin: auto;
+  width: 80%;
+  height: 600px;
+  padding-top: 30px;
+}
+
+.title-biz {
+  display: flex;
+  justify-content: center;
+  font-size: 40px;
+  color: #ffa73b;
+  background-color: white;
+  padding: 10px;
+}
+
+.desc-biz {
+  display: flex;
+  justify-content: center;
+  font-size: 18px;
+  padding: 20px;
+}
+
+.locat-biz {
+  display: flex;
+  justify-content: center;
+  font-size: 18px;
+  padding-bottom: 20px;
+}
+
+.rate-biz {
+  display: flex;
+  justify-content: center;
+  font-size: 18px;
+  padding-bottom: 20px;
+}
+
+.rev-biz {
+  margin: auto;
+  background-color: white;
+  width: 50%;
+  height: 40px;
+  padding: 10px;
+  border-radius: 5px;
 }
