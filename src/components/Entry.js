@@ -1,5 +1,6 @@
 import React from "react";
-import { Link } from "react-router-dom";
+import { Link, Redirect } from "react-router-dom";
+import server from "../ServerInterface/server";
 import "./style.css";
 
 class Entry extends React.Component {
@@ -8,9 +9,11 @@ class Entry extends React.Component {
     this.state = { username: "", entries: [], cursor: 0, score: 0, count: 1 };
   }
 
-  delEntry = () => {
-    alert("hello");
-    return;
+  delEntry = (event) => {
+    const { business } = this.props;
+    let place = event.target.value;
+    server.delete(business, place);
+    return <Redirect to="/search" />;
   };
 
   render() {
@@ -51,7 +54,13 @@ class Entry extends React.Component {
                   </div>
                 </div>
               </Link>
-              <button onClick={this.delEntry}>Delete</button>
+              <button
+                onClick={this.delEntry}
+                value={place}
+                className="del_button"
+              >
+                Delete
+              </button>
             </div>
           );
         }

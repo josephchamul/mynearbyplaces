@@ -1,7 +1,7 @@
 import React from "react";
 import { Link, Redirect } from "react-router-dom";
 import "./style.css";
-import header from "./images/title_pic.jpg";
+import header from "./images/review-image.jpeg";
 
 class Review extends React.Component {
   constructor(props) {
@@ -15,32 +15,33 @@ class Review extends React.Component {
       return <Redirect to={from} />;
     }
     return (
-      <div className="log-content">
-        <div className="login_title">
+      <div className="rev-content">
+        <div className="search_title">
           <Link to="/" className="title-link">
             ReViewer
           </Link>
         </div>
-        <img src={header} alt="header_img" />
+
         <div className="review-input">
           <form onSubmit={this.onSubmit}>
             <h3>Write a ReView </h3>
             <label>Business Type</label>
-            <input type="text" name="username"></input>
+            <input type="text" name="BuzType"></input>
             <label>Business Name</label>
-            <input type="text" name="username"></input>
-            <label>Rating</label>
-            <input type="text" name="username"></input>
+            <input type="text" name="bizName"></input>
+            <label>Star Rating</label>
+            <input type="text" name="rate"></input>
             <label>Location</label>
-            <input type="text" name="username"></input>
+            <input type="text" name="locat"></input>
             <label>Description</label>
-            <input type="text" name="username"></input>
+            <input type="text" name="desc"></input>
             <label>Comment</label>
-            <input type="text" name="username"></input>
+            <textarea type="text" name="comment"></textarea>
             <button type="submit">Post</button>
           </form>
         </div>
-        <div className="log-qoute"> ReView Your Favorite Places Around You</div>
+        <img src={header} alt="header_img" />
+        <div className="rev-qoute"> Find Amazing places around you!</div>
       </div>
     );
   }

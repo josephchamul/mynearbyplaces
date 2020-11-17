@@ -73,6 +73,7 @@ class Biz extends React.Component {
           <div className="rate-biz">Rating: {rate} out of 5</div>
           <div className="rev-biz">"{rev}"</div>
           <button onClick={this.delEntry}>Delete</button>
+          <button>Add</button>
         </div>
       </div>
     );

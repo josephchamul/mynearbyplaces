@@ -1,3 +1,5 @@
+@import url("https://fonts.googleapis.com/css2?family=Anton&family=Arimo:wght@700&family=Barlow:wght@600&family=Cantarell&family=Fjalla+One&family=PT+Sans+Caption&family=Ubuntu:wght@500&display=swap");
+
 .headers {
   width: 100%;
   height: 60%;
@@ -26,6 +28,7 @@
   top: 5px;
   font-size: 18px;
   width: 150px;
+  font-family: "Barlow", sans-serif;
 }
 
 .button {
@@ -38,7 +41,7 @@
   opacity: 1;
   padding: 10px 10px 10px 10px;
   border-radius: 5px 5px 5px 5px;
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: "Barlow", sans-serif;
 }
 
 .title {
@@ -48,7 +51,7 @@
   position: absolute;
   top: 160px;
   left: 470px;
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: "Fjalla One", sans-serif;
   font-weight: bold;
   background-color: rgb(255, 167, 59, 0.9);
   padding-right: 15px;
@@ -61,7 +64,9 @@
 }
 .log-content img {
   width: 100%;
-  opacity: 0.9;
+  margin-top: 5px;
+  filter: blur(8px);
+  -webkit-filter: blur(5px);
 }
 .login_title {
   background-color: #ffa73b;
@@ -72,6 +77,7 @@
   padding-bottom: 10px;
   width: 100%;
   height: 60px;
+  margin-bottom: 5px;
 }
 
 .signin {
@@ -86,7 +92,7 @@
   border-radius: 10px 10px 10px 10px;
   font-family: Arial, Helvetica, sans-serif;
   text-align: center;
-  background-color: rgb(171, 171, 171, 0.8);
+  background-color: rgb(171, 171, 171);
 }
 
 .signin input {
@@ -101,17 +107,18 @@
   width: 80%;
   height: 25px;
   color: white;
+  font-size: 18px;
   background-color: #ffa73b;
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: "Barlow", sans-serif;
   border: none;
 }
 
 .log-qoute {
   position: absolute;
-  background-color: rgb(112, 112, 112, 0.3);
   font-size: 60px;
   color: white;
   text-align: center;
+  font-family: "Ubuntu", sans-serif;
   top: 240px;
   right: 150px;
   width: 390px;
@@ -138,6 +145,7 @@
   font-weight: bold;
   height: 40px;
   width: 100%;
+  font-family: "Arimo", sans-serif;
 }
 
 .search {
@@ -151,6 +159,7 @@
   height: 30px;
   width: 250px;
   color: #9c9c9c;
+  font-family: "Barlow", sans-serif;
 }
 
 .search button {
@@ -159,7 +168,7 @@
   width: 60px;
   background-color: #ffa73b;
   color: white;
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: "Barlow", sans-serif;
 }
 
 .search_title {
@@ -182,9 +191,22 @@
   justify-content: center;
 }
 
+.del_button {
+  color: white;
+  background-color: #ffa73b;
+  border: none;
+  border-radius: 3px;
+  width: 100px;
+  height: 20px;
+  margin-top: 4px;
+  font-family: "Barlow", sans-serif;
+}
+
 .title-link {
   color: white;
   text-decoration: none;
+  margin-top: 15px;
+  font-family: "Fjalla One", sans-serif;
 }
 
 .place-div {
@@ -199,11 +221,13 @@
 .review-title {
   float: left;
   font-size: 30px;
-  color: black;
+  color: white;
   background-color: #ffa73b;
   width: 100%;
   height: 50px;
   text-align: center;
+  font-family: "Arimo", sans-serif;
+  padding-top: 5px;
 }
 
 .review-des {
@@ -213,6 +237,7 @@
   text-align: center;
   color: black;
   padding: 5px;
+  font-family: "Cantarell", sans-serif;
 }
 
 .review-loc {
@@ -222,6 +247,7 @@
   text-align: center;
   color: black;
   padding: 5px;
+  font-family: "Cantarell", sans-serif;
 }
 
 .review-rate {
@@ -231,6 +257,7 @@
   text-align: center;
   color: black;
   padding: 5px;
+  font-family: "Cantarell", sans-serif;
 }
 
 .review-comment {
@@ -240,6 +267,7 @@
   text-align: center;
   color: black;
   padding: 5px;
+  font-family: "Cantarell", sans-serif;
 }
 
 .places {
@@ -258,6 +286,7 @@
   margin-top: 18px;
   border-radius: 10px;
   text-decoration: none;
+  font-family: "PT Sans Caption", sans-serif;
 }
 
 .button-places img {
@@ -281,33 +310,69 @@
 .review-input {
   color: white;
   font-size: 30px;
-  position: absolute;
-  width: 280px;
-  height: 350px;
-  top: 50px;
-  left: 180px;
-  padding: 20px 10px 12px 10px;
-  border-radius: 10px 10px 10px 10px;
+  width: 550px;
+  height: 750px;
+  float: left;
   font-family: Arial, Helvetica, sans-serif;
   text-align: center;
+  background-color: #9c9c9c;
 }
 
 .review-input input {
-  margin-top: 20px;
-  margin-bottom: 20px;
-  width: 80%;
-  height: 20px;
+  width: 50%;
+  height: 25px;
   border: none;
+  display: block;
+  margin: 5px auto;
+  padding: 5px;
+  border-radius: 5px 5px 5px 5px;
+}
+
+.review-input textarea {
+  display: block;
+  margin: 0 auto;
+  width: 80%;
+  height: 100px;
+  border-radius: 5px 5px 5px 5px;
+}
+
+.review-input label {
+  font-size: 25px;
+  color: white;
 }
 
 .review-input button {
-  width: 80%;
-  height: 25px;
+  width: 200px;
+  height: 35px;
   color: white;
+  font-size: 20px;
   background-color: #ffa73b;
-  position: absolute;
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: "Barlow", sans-serif;
   border: none;
+  border-radius: 5px 5px 5px 5px;
+  margin-top: 25px;
+}
+.rev-content img {
+  width: 60%;
+  height: 750px;
+  position: absolute;
+  filter: brightness(80%);
+  filter: blur(8px);
+  -webkit-filter: blur(3px);
+}
+.rev-qoute {
+  position: absolute;
+
+  font-size: 60px;
+  color: white;
+  text-align: center;
+  top: 260px;
+  right: 150px;
+  width: 390px;
+  height: 220px;
+  padding: 5px;
+  border-radius: 5px 5px 5px 5px;
+  font-family: "Ubuntu", sans-serif;
 }
 
 .biz-body {
@@ -316,6 +381,17 @@
   width: 80%;
   height: 600px;
   padding-top: 30px;
+}
+
+.biz-body button {
+  color: white;
+  background-color: #ffa73b;
+  border: none;
+  border-radius: 3px;
+  width: 100px;
+  height: 20px;
+  margin-left: 15px;
+  font-family: "Barlow", sans-serif;
 }
 
 .title-biz {
