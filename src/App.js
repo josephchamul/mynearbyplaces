@@ -6,6 +6,8 @@ import Review from "./components/Review";
 import Search from "./components/Search";
 import Biz from "./components/Biz";
 import Entry from "./components/Entry";
+
+import "bootstrap/dist/css/bootstrap.min.css";
 import "./App.css";
 
 function App() {

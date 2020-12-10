@@ -119,8 +119,10 @@ class Home extends React.Component {
   };
 
   componentDidMount() {
-    const entries = server.fetchEntries()[0];
-    this.setState({ entries: entries });
+    server
+      .fetchPlaces()
+      .then((x) => this.setState({ entries: x }))
+      .catch((e) => console.log(e));
   }
 
   render() {

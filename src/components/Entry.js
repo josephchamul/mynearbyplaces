@@ -6,17 +6,39 @@ import "./style.css";
 class Entry extends React.Component {
   constructor(props) {
     super(props);
-    this.state = { username: "", entries: [], cursor: 0, score: 0, count: 1 };
+    this.state = { type: "", biz: "", del: false, index: 0 };
   }
 
-  delEntry = (event) => {
-    const { business } = this.props;
-    let place = event.target.value;
-    server.delete(business, place);
-    return <Redirect to="/search" />;
+  setBiz = (type, biz) => {
+    this.setState({ type: type });
+    this.setState({ biz: biz });
+  };
+
+  delEntry = () => {
+    //alert(this.state.type);
+    server.delete(this.state.type, this.state.biz);
+    this.setState({ del: true });
+  };
+
+  getReview = (i, place) => {
+    const { entry } = this.props;
+    var items = [];
+    for (let x = 0; x < entry[i].places[place].review.length; x++) {
+      items.push(
+        <div>
+          <div className="review-comment">
+            "{entry[i].places[place].review[x]}"
+          </div>
+        </div>
+      );
+    }
+    return items;
   };
 
   render() {
+    if (this.state.del) {
+      return <Redirect to="/" />;
+    }
     var items = [];
     const { entry, business } = this.props;
     for (let i = 0; i < entry.length; i++) {
@@ -24,6 +46,7 @@ class Entry extends React.Component {
         for (let place = 0; place < entry[i].places.length; place++) {
           items.push(
             <div>
+              {this.setBiz}
               <Link
                 to={{
                   pathname: "/biz",
@@ -33,6 +56,7 @@ class Entry extends React.Component {
                     location_biz: entry[i].places[place].location,
                     desc_biz: entry[i].places[place].description,
                     rev_biz: entry[i].places[place].review,
+                    type_biz: entry[i].places[place].type,
                   },
                 }}
               >
@@ -49,16 +73,10 @@ class Entry extends React.Component {
                   <div className="review-rate">
                     Star Rating: {entry[i].places[place].rate}
                   </div>
-                  <div className="review-comment">
-                    "{entry[i].places[place].review[0]}"
-                  </div>
+                  {this.getReview(i, place)}
                 </div>
               </Link>
-              <button
-                onClick={this.delEntry}
-                value={place}
-                className="del_button"
-              >
+              <button onClick={this.delEntry} className="del_button">
                 Delete
               </button>
             </div>

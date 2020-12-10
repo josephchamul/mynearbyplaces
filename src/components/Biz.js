@@ -1,13 +1,15 @@
 import React from "react";
-import { Link } from "react-router-dom";
+import { Link, Redirect } from "react-router-dom";
 import Entry from "./Entry";
+import Form from "react-bootstrap/Form";
+import Button from "react-bootstrap/Button";
 import server from "../ServerInterface/server";
 import "./style.css";
 
 class Biz extends React.Component {
   constructor(props) {
     super(props);
-    this.state = { entries: [] };
+    this.state = { entries: [], review: "", type: "", name: "", revadd: false };
   }
 
   body = (name, location) => {
@@ -24,8 +26,17 @@ class Biz extends React.Component {
   };
 
   delEntry = () => {
-    alert("hello");
     return;
+  };
+
+  onChange = (event) => {
+    const value = event.target.value;
+    const name = event.target.name;
+    this.setState({ [name]: value });
+  };
+
+  addReview = (type, name) => {
+    server.addReview(this.state.review, name, type);
   };
 
   render() {
@@ -34,6 +45,7 @@ class Biz extends React.Component {
     let rate = "";
     let desc = "";
     let rev = "";
+    let type = "";
     const location = this.props.location;
     if (location) {
       if (location.state) {
@@ -51,6 +63,9 @@ class Biz extends React.Component {
         }
         if (location.state.rev_biz) {
           rev = location.state.rev_biz;
+        }
+        if (location.state.type_biz) {
+          type = location.state.type_biz;
         }
       }
     }
@@ -72,8 +87,24 @@ class Biz extends React.Component {
           <div className="locat-biz">{locate}</div>
           <div className="rate-biz">Rating: {rate} out of 5</div>
           <div className="rev-biz">"{rev}"</div>
-          <button onClick={this.delEntry}>Delete</button>
-          <button>Add</button>
+          <Form>
+            <Form.Group controlId="review">
+              <Form.Label>Enter a Review</Form.Label>
+              <Form.Control
+                type="text"
+                name="review"
+                value={this.state.review}
+                onChange={this.onChange}
+              />
+            </Form.Group>
+            <Button
+              variant="primary"
+              type="submit"
+              onClick={this.addReview(type, name)}
+            >
+              add
+            </Button>
+          </Form>
         </div>
       </div>
     );
